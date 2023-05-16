@@ -1,7 +1,8 @@
 <?php
 
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+namespace Web\User\Models;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -19,6 +20,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        "is_admin",
         'password',
     ];
 

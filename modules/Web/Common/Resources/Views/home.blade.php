@@ -1,5 +1,7 @@
 @extends('Common::layouts.index')
 
 @section('content')
-    <p>This is the home page</p>
+    <h1 class="mt-6">
+        Hello world!
+    </h1>
 @endsection
