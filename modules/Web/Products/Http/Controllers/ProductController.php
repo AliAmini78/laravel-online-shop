@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Web\Products\Database\Repositories\Contracts\ProductRepositoryInterface;
 use Web\Products\Http\Requests\ProductRequest;
 use Web\Products\Models\Product;
@@ -42,10 +43,14 @@ class ProductController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     * @param ProductRequest $request
+     * @return RedirectResponse
      */
-    public function store(ProductRequest $request)
+    public function store(ProductRequest $request): RedirectResponse
     {
-        //
+        $this->productRepository->store($request->validated());
+
+        return redirect()->route('product.index');
     }
 
     /**
@@ -55,7 +60,8 @@ class ProductController extends Controller
      */
     public function show(Product $product): \Illuminate\Foundation\Application|View|Factory|Application
     {
-        return view('Product::show');
+
+        return view('Product::show' , compact('product'));
     }
 
     /**
@@ -65,22 +71,30 @@ class ProductController extends Controller
      */
     public function edit(Product $product): Factory|\Illuminate\Foundation\Application|View|Application
     {
-        return view("Product::edit" , compact($product));
+        return view("Product::edit" , compact('product'));
     }
 
     /**
      * Update the specified resource in storage.
+     * @param ProductRequest $request
+     * @param Product $product
+     * @return RedirectResponse
      */
-    public function update(ProductRequest $request, Product $product)
+    public function update(ProductRequest $request, Product $product): RedirectResponse
     {
-        //
+        $this->productRepository->update($request->validated() , $product);
+        return redirect()->route('product.index');
     }
 
     /**
      * Remove the specified resource from storage.
+     * @param Product $product
+     * @return RedirectResponse
      */
-    public function destroy(Product $product)
+    public function destroy(Product $product): RedirectResponse
     {
-        //
+        $this->productRepository->destroy($product);
+
+        return redirect()->route('product.index');
     }
 }

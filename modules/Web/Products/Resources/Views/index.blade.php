@@ -6,13 +6,13 @@
                 <span class=" fw-bold">
                       لیست محصولات
                 </span>
-            <a href="#" class="btn btn-primary">
+            <a href="{{route('product.create')}}" class="btn btn-primary">
                 ساخت محصول جدید
             </a>
         </div>
         <hr>
         @if(!empty($products) && $products->count())
-        <div>
+            <div>
 
                 <table class="table table-bordered">
                     <thead>
@@ -39,17 +39,27 @@
                                 {{$product->count}}
                                 عدد
                             </td>
-                            <td>
-                                <a href="#" class="btn btn-warning">ویرایش</a>
-                                <a href="#" class="btn btn-secondary mx-1">نمایش</a>
-                                <a href="#" class="btn btn-danger">حذف</a>
+                            <td class="d-flex">
+                                <a href="{{route('product.edit' , ['product' => $product])}}" class="btn btn-warning">ویرایش</a>
+                                <a href="{{route('product.show' , ['product' => $product])}}"
+                                   class="btn btn-secondary mx-1">نمایش</a>
+                                <div>
+                                    <form method="POST" action="{{route('product.destroy' , ['product' => $product])}}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">
+                                        حذف
+                                    </button>
+                                </form>
+                                </div>
+
                             </td>
                         </tr>
                     @endforeach
                     </tbody>
 
                 </table>
-        </div>
+            </div>
             {{ $products->links() }}
         @else
             <div class="d-flex align-items-center justify-content-center">
