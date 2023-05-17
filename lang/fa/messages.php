@@ -11,10 +11,11 @@ return [
     'created' =>':attribute با موفقیت اضافه شد.',
     'updated' =>':attribute با موفقیت ویرایش شد.',
     'deleted' =>':attribute با موفقیت حذف شد.',
-    'restored' =>':attribute با موفقیت بازیابی شد.',
-    'password' => 'رمز عبور وارد شده اشتباه می باشد',
-    'many_attempts' => 'شما بیش از اندازه در خواست دادید',
-    'authentication-exception' => 'برای دسترسی وارد سایت شوید',
+    "item_finished" =>  'این محصول موجودی ندارد',
+    "item_exist" =>  'این محصول در سبد خرید شما موجود میباشد',
+    "item_not_found" =>  'محصول در سبد خرید شما پیدا نشد',
+    "item_add" =>   'ایتم به سبد خرید شما اضافه شد',
+    "item_remove" =>   'ایتم از سبد خرید شما حذف شد',
 
 
 ];

@@ -26,4 +26,21 @@ class Product extends Model
         return ProductFactory::new();
     }
 
+    /**
+     * decrement the product count
+     * @return false|int
+     */
+    public function decrementCount(): bool|int
+    {
+        return $this->decrement('count');
+    }
+    /**
+     * increment the product count
+     * @return false|int
+     */
+    public function incrementCount(): bool|int
+    {
+        return $this->increment('count');
+    }
+
 }

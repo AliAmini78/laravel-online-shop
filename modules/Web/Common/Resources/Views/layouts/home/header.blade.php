@@ -14,7 +14,7 @@
                     <a class="nav-link active" aria-current="page" href="{{route('product.home_list')}}">محصولات</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">سبد خرید</a>
+                    <a class="nav-link active" aria-current="page" href="{{route("cart.list")}}">سبد خرید</a>
                 </li>
             </ul>
 

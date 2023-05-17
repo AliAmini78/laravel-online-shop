@@ -24,7 +24,10 @@
                                 عدد
                             </li>
                         </ul>
-                        <a href="#" class="btn btn-primary">اضافه به سبد خرید</a>
+                        <form action="{{route('cart.add' , ['product' => $product])}}" method="POST">
+                            @csrf
+                            <button type="submit" class="btn btn-primary ">اضافه به سبد خرید</button>
+                        </form>
                     </div>
                 </div>
             </div>
