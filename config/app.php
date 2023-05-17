@@ -176,9 +176,7 @@ return [
         \Web\Common\Providers\CommonServiceProvider::class,
         \Web\User\Providers\UserServiceProvider::class,
         \Web\Auth\Providers\AuthServiceProvider::class,
-        \Web\Auth\Providers\AuthRepositoryPatternServiceProvider::class,
         \Web\Products\Providers\ProductServiceProvider::class,
-        \Web\Products\Providers\ProductRepositoryPatternServiceProvider::class,
     ])->toArray(),
 
     /*

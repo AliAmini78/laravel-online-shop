@@ -12,8 +12,16 @@ class ProductServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
+        //register the repository pattern service provider
+        $this->app->register(ProductRepositoryPatternServiceProvider::class);
+
+        //load the migrations
+        $this->loadMigrationsFrom(__DIR__ . "/../Database/Migrations");
+
+        // load the views
         $this->loadViewsFrom(__DIR__ . "/../Resources/Views" , "Product");
 
+        //load the routes
         Route::middleware(['web'])
             ->group(__DIR__ .'/../Routes/web.php');
     }

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Web\User\Database\Factories\UserFactory;
 
 class User extends Authenticatable
 {
@@ -33,6 +34,15 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    /**
+     * factory of user
+     * @return UserFactory
+     */
+    protected static function newFactory(): UserFactory
+    {
+        return UserFactory::new();
+    }
 
     /**
      * The attributes that should be cast.

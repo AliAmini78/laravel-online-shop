@@ -26,6 +26,8 @@ class ProductController extends Controller
      */
     public function index(): \Illuminate\Foundation\Application|View|Factory|Application
     {
+        $products = $this->productRepository->paginate();
+
         return view('Product::index');
     }
 
