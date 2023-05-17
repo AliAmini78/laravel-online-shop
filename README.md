@@ -1,22 +1,59 @@
-# laravel-online-shop
-online shop with laravel
 
-----------------------------------------
 
-for run the project successfully follwo the list item : <br/>
-1- composer install <br/>
-2- npm install<br/>
-3- php artisan migrate<br/>
-4- php artisan db:seed<br/>
-5- npm run dev<br/>
-6- php artisan serve<br/>
-7- php artisan queue:work<br/>
 
-----------------------------------------
 
-the admin user info for login is  :<br/>
-email = admin@gmail.com <br/>
-password = 123456 <br/>
+# Getting started
 
--------------------------------------------
-for recive the email notification please set mail ftp information in .env
+## Installation
+
+Please check the official laravel installation guide for server requirements before you start.
+
+Clone the repository
+
+    git clone https://github.com/AliAmini78/laravel-online-shop.git
+
+Switch to the repo folder
+
+    cd laravel-online-shop
+
+Install all the dependencies using composer
+
+    composer install
+
+Install all the dependencies using npm
+
+    npm install
+
+Copy the example env file and make the required configuration changes in the .env file
+
+    cp .env.example .env
+
+Generate a new application key
+
+    php artisan key:generate
+
+Run the database migrations (**Set the database connection in .env before migrating**)
+
+    php artisan migrate
+
+Run the database seeder and you're done
+
+    php artisan db:seed
+
+Run npm 
+
+    npm run dev
+
+Run the laravel development server
+
+    php artisan serve
+
+You can now access the server at http://localhost:8000
+
+
+----------
+
+## the admin user info for login is
+
+   email = admin@gmail.com <br/>
+   password = 123456 

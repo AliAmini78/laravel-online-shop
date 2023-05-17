@@ -20,7 +20,9 @@
 
             @auth
                 <div class="d-flex">
-                    <a href="{{route('panel')}}" class="btn btn-success ms-2" type="submit">پنل</a>
+                    @if(auth()->user()->is_admin)
+                        <a href="{{route('panel')}}" class="btn btn-success ms-2" type="submit">پنل</a>
+                    @endif
                     <a href="{{route('logout')}}"  class="btn btn-danger" type="submit">خروج</a>
                 </div>
             @endauth
