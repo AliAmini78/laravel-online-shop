@@ -7,10 +7,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">پنل</a>
+                    <a class="nav-link active" aria-current="page" href="{{route('panel')}}">پنل</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">صفحه محصولات</a>
+                    <a href="{{route('product.index')}}" class="nav-link active" aria-current="page" >صفحه محصولات</a>
                 </li>
             </ul>
 

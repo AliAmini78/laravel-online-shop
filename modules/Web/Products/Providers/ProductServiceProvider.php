@@ -12,7 +12,7 @@ class ProductServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->loadViewsFrom(__DIR__ . "/../Resources/Views" , "Auth");
+        $this->loadViewsFrom(__DIR__ . "/../Resources/Views" , "Product");
 
         Route::middleware(['web'])
             ->group(__DIR__ .'/../Routes/web.php');
