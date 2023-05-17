@@ -10,7 +10,7 @@
 <header >
     @include("Common::layouts.panel.header")
 </header>
-
+@include('Common::components.message')
 <div class="container">
     @yield('content')
 </div>

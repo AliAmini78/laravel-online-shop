@@ -17,7 +17,7 @@ class ProductController extends Controller
 
     private ProductRepositoryInterface $productRepository;
     private NotificationServices $notificationServices;
-
+    private string $controllerName = 'محصول';
     public function __construct(
         ProductRepositoryInterface $productRepository,
         NotificationServices $notificationServices
@@ -57,7 +57,7 @@ class ProductController extends Controller
         $newProduct = $this->productRepository->store($request->validated());
 
         $this->notificationServices->sendNewProductNotificationToAdmin($newProduct);
-        return redirect()->route('product.index');
+        return redirect()->route('product.index')->with('success_message' , __("messages.created" , ['attribute' => $this->controllerName]));
     }
 
     /**
@@ -90,7 +90,7 @@ class ProductController extends Controller
     public function update(ProductRequest $request, Product $product): RedirectResponse
     {
         $this->productRepository->update($request->validated() , $product);
-        return redirect()->route('product.index');
+        return redirect()->route('product.index')->with('success_message' , __("messages.updated" , ['attribute' => $this->controllerName]));
     }
 
     /**
@@ -102,6 +102,6 @@ class ProductController extends Controller
     {
         $this->productRepository->destroy($product);
 
-        return redirect()->route('product.index');
+        return redirect()->route('product.index')->with('success_message' , __("messages.deleted" , ['attribute' => $this->controllerName]));
     }
 }

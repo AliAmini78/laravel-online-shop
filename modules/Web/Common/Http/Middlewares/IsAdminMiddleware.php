@@ -18,6 +18,6 @@ class IsAdminMiddleware
         if (auth()->user()->is_admin)
             return $next($request);
 
-        return redirect()->route('home');
+        return redirect()->route('home')->with('error_message' , __("messages.not_access"));
     }
 }

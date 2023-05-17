@@ -42,7 +42,7 @@ class AuthController extends Controller
     {
         $result = $this->authRepository->register($request->validated());
 
-        return redirect()->route('home');
+        return redirect()->route('home')->with('success_message' , __('messages.register_success'));
     }
 
     /**
@@ -64,9 +64,9 @@ class AuthController extends Controller
         $result = $this->authRepository->login($request->validated());
 
         if ($result)
-        return redirect()->route('home');
+        return redirect()->route('home')->with('success_message' ,  __("messages.login_success"));
 
-            return redirect()->route('login');
+            return redirect()->route('login')->with('error_message' , __("messages.login_error"));
     }
 
     /**
@@ -77,6 +77,6 @@ class AuthController extends Controller
     {
         Auth::logout();
 
-        return redirect()->route('home');
+        return redirect()->route('home')->with('success_message' , __("messages.logout_success"));
     }
 }
