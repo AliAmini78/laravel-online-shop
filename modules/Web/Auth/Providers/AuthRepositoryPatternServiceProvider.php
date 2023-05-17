@@ -4,18 +4,18 @@ namespace Web\Auth\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Web\Auth\Database\Repositories\Contracts\AuthRepositoryInterface;
+use Web\Auth\Database\Repositories\Eloquents\AuthRepository;
 
-class AuthServiceProvider extends ServiceProvider
+class AuthRepositoryPatternServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
      */
     public function register(): void
     {
-        $this->loadViewsFrom(__DIR__ . "/../Resources/Views" , "Auth");
+        $this->app->bind(AuthRepositoryInterface::class, AuthRepository::class);
 
-        Route::middleware(['web'])
-            ->group(__DIR__ .'/../Routes/web.php');
     }
 
     /**

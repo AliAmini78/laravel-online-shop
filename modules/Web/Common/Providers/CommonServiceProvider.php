@@ -16,7 +16,7 @@ class CommonServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__ . "/../Database/Migrations");
 
         // add routes path
-        Route::middleware('web')
+        Route::middleware(['web'])
             ->group(__DIR__ .'/../Routes/web.php');
 
         // add Resource Path

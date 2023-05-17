@@ -7,7 +7,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Application;
 
-class CommonController extends Controller
+class HomeController extends Controller
 {
     /**
      * the home page

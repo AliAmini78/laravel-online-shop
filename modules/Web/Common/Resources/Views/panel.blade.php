@@ -1,4 +1,4 @@
-@extends('Common::layouts.home.index')
+@extends('Common::layouts.panel.index')
 
 @section('content')
     <h1 class="mt-6">

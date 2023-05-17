@@ -6,17 +6,14 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
 </head>
-<body>
+<body >
 <header >
-    @include("Common::layouts/header")
+    @include("Common::layouts.panel.header")
 </header>
 
 <div class="container">
     @yield('content')
 </div>
 
-<footer>
-    @include("Common::layouts/footer")
-</footer>
 </body>
 </html>

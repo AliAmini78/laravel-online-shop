@@ -83,7 +83,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'fa',
 
     /*
     |--------------------------------------------------------------------------
@@ -175,6 +175,8 @@ return [
          */
         \Web\Common\Providers\CommonServiceProvider::class,
         \Web\User\Providers\UserServiceProvider::class,
+        \Web\Auth\Providers\AuthServiceProvider::class,
+        \Web\Auth\Providers\AuthRepositoryPatternServiceProvider::class,
     ])->toArray(),
 
     /*
