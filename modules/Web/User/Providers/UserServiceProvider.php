@@ -19,6 +19,9 @@ class UserServiceProvider extends ServiceProvider
         Route::middleware('web')
             ->group(__DIR__ .'/../Routes/web.php');
 
+        // register user repository pattern
+        $this->app->register(UserRepositoryPatternServiceProvider::class);
+
     }
 
     /**

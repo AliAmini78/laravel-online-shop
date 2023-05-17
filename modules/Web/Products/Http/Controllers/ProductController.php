@@ -10,15 +10,21 @@ use Illuminate\Http\RedirectResponse;
 use Web\Products\Database\Repositories\Contracts\ProductRepositoryInterface;
 use Web\Products\Http\Requests\ProductRequest;
 use Web\Products\Models\Product;
+use Web\Products\Services\NotificationServices;
 
 class ProductController extends Controller
 {
 
     private ProductRepositoryInterface $productRepository;
+    private NotificationServices $notificationServices;
 
-    public function __construct(ProductRepositoryInterface $productRepository)
+    public function __construct(
+        ProductRepositoryInterface $productRepository,
+        NotificationServices $notificationServices
+    )
     {
         $this->productRepository = $productRepository;
+        $this->notificationServices = $notificationServices;
     }
 
     /**
@@ -48,8 +54,9 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request): RedirectResponse
     {
-        $this->productRepository->store($request->validated());
+        $newProduct = $this->productRepository->store($request->validated());
 
+        $this->notificationServices->sendNewProductNotificationToAdmin($newProduct);
         return redirect()->route('product.index');
     }
 

@@ -45,14 +45,13 @@
                                    class="btn btn-secondary mx-1">نمایش</a>
                                 <div>
                                     <form method="POST" action="{{route('product.destroy' , ['product' => $product])}}">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">
-                                        حذف
-                                    </button>
-                                </form>
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">
+                                            حذف
+                                        </button>
+                                    </form>
                                 </div>
-
                             </td>
                         </tr>
                     @endforeach

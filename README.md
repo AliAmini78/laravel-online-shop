@@ -10,6 +10,7 @@ for run the project successfully follwo the list item : <br/>
 4- php artisan db:seed<br/>
 5- npm run dev<br/>
 6- php artisan serve<br/>
+7- php artisan queue:work<br/>
 
 ----------------------------------------
 
@@ -18,3 +19,4 @@ email = admin@gmail.com <br/>
 password = 123456 <br/>
 
 -------------------------------------------
+for recive the email notification please set mail ftp information in .env

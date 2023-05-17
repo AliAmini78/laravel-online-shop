@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Web\Products\Models\Product;
+use Web\Products\Notifications\NewProductNotification;
 use Web\User\Database\Factories\UserFactory;
 
 class User extends Authenticatable
@@ -56,5 +58,15 @@ class User extends Authenticatable
     public function setPasswordAttribute($value)
     {
         $this->attributes['password'] = bcrypt($value);
+    }
+
+    /**
+     * send new product notification
+     * @param Product $product
+     * @return void
+     */
+    public function sendNewProductNotification(Product $product): void
+    {
+        $this->notify(new NewProductNotification($product));
     }
 }
