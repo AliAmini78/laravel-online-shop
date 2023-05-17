@@ -2,6 +2,6 @@
 
 @section('content')
     <h1 class="mt-6">
-        Hello world!
+        پنل ادمین
     </h1>
 @endsection
