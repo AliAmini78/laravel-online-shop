@@ -25,7 +25,7 @@ class LoginRequest extends FormRequest
     {
         return [
             "email" => ['required' , 'email' , Rule::exists('users' , 'email')],
-            'password' => ['bail' , 'required' , 'min:6' ],//, new StrongPassword],
+            'password' => ['bail' , 'required' , 'min:6' ]
         ];
     }
 }

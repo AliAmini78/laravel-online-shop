@@ -40,7 +40,7 @@ class AuthController extends Controller
      */
     public function register(RegisterRequest $request): Application|Redirector|RedirectResponse|\Illuminate\Contracts\Foundation\Application
     {
-        $result = $this->authRepository->register($request->validated());
+        $this->authRepository->register($request->validated());
 
         return redirect()->route('home')->with('success_message' , __('messages.register_success'));
     }
