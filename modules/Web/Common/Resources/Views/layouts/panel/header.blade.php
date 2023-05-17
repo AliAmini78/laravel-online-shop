@@ -5,7 +5,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{route('panel')}}">پنل</a>
                 </li>
@@ -15,8 +15,8 @@
             </ul>
 
                 <div class="d-flex">
-                    <a href="{{route('home')}}" class="btn btn-success me-2" type="submit">خانه</a>
-                    <a href="{{route('logout')}}"  class="btn btn-danger" type="submit">خروج</a>
+                    <a href="{{route('home')}}" class="btn btn-success ms-2" type="submit">خانه</a>
+                    <a href="{{route('logout')}}"  class="btn btn-danger " type="submit">خروج</a>
                 </div>
         </div>
     </div>

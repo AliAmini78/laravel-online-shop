@@ -24,6 +24,6 @@ class ProductRepository implements ProductRepositoryInterface
         return $this->model
             ->newQuery()
             ->latest()
-            ->paginate(20);
+            ->paginate(10);
     }
 }

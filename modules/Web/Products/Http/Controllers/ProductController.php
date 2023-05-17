@@ -28,7 +28,7 @@ class ProductController extends Controller
     {
         $products = $this->productRepository->paginate();
 
-        return view('Product::index');
+        return view('Product::index' , compact('products'));
     }
 
     /**
