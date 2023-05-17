@@ -35,7 +35,7 @@ class ProductController extends Controller
     {
         $products = $this->productRepository->paginate();
 
-        return view('Product::index' , compact('products'));
+        return view('Product::product.panel.index' , compact('products'));
     }
 
     /**
@@ -44,7 +44,7 @@ class ProductController extends Controller
      */
     public function create(): Factory|\Illuminate\Foundation\Application|View|Application
     {
-        return view('Product::create');
+        return view('Product::product.panel.create');
     }
 
     /**
@@ -68,7 +68,7 @@ class ProductController extends Controller
     public function show(Product $product): \Illuminate\Foundation\Application|View|Factory|Application
     {
 
-        return view('Product::show' , compact('product'));
+        return view('Product::product.panel.show' , compact('product'));
     }
 
     /**
@@ -78,7 +78,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product): Factory|\Illuminate\Foundation\Application|View|Application
     {
-        return view("Product::edit" , compact('product'));
+        return view("Product::product.panel.edit" , compact('product'));
     }
 
     /**
@@ -103,5 +103,16 @@ class ProductController extends Controller
         $this->productRepository->destroy($product);
 
         return redirect()->route('product.index')->with('success_message' , __("messages.deleted" , ['attribute' => $this->controllerName]));
+    }
+
+    /**
+     * list of product in front page
+     * @return Application|Factory|\Illuminate\Foundation\Application|View
+     */
+    public function frontProductList(): View|\Illuminate\Foundation\Application|Factory|Application
+    {
+        $products = $this->productRepository->paginate();
+
+        return view('Product::product.home.list' , compact('products'));
     }
 }
