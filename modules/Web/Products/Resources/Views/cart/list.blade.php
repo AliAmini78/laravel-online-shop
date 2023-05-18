@@ -7,6 +7,11 @@
         </h2>
         <hr>
         <div class="row">
+            @empty($cart)
+                <div class="d-flex justify-content-center align-items-center fw-bolder">
+                    سبد خرید شما خالی میباشد
+                </div>
+            @endempty
             @foreach($cart as $key => $product)
                 <div class=" col-3 my-3">
                     <div class="card">
