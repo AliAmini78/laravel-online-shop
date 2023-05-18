@@ -7,7 +7,7 @@
         </h2>
     <hr>
         <div class="row">
-            @empty($cart)
+            @empty($products)
                 <div class="d-flex justify-content-center align-items-center fw-bolder">
                     لست محصولات خالی می باشد
                 </div>
