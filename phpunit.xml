@@ -11,7 +11,18 @@
         <testsuite name="Feature">
             <directory suffix="Test.php">./tests/Feature</directory>
         </testsuite>
+
+        <!--product testing-->
+            <testsuite name="Unit">
+                <directory suffix="Test.php">./modules/Web/Products/Tests/Unit</directory>
+            </testsuite>
+            <testsuite name="Feature">
+                <directory suffix="Test.php">./modules/Web/Products/Tests/Feature</directory>
+            </testsuite>
     </testsuites>
+
+
+
     <source>
         <include>
             <directory suffix=".php">./app</directory>
