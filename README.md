@@ -52,16 +52,6 @@ You can now access the server at http://localhost:8000
 
 
 ----------
-
-Run the laravel test
-
-    php artisan test
-
----------
-Run the laravel queue job
-
-    php artisan queue:work
-
     
 ## the admin user info for login is
 
@@ -69,3 +59,15 @@ Run the laravel queue job
    password = 123456 
 
 ---------
+
+Run the laravel test
+
+    php artisan test
+
+attention : run testing will remove the databse data
+
+---------
+Run the laravel queue job
+
+    php artisan queue:work
+
