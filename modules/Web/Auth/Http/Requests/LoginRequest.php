@@ -24,7 +24,7 @@ class LoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "email" => ['required' , 'email' , Rule::exists('users' , 'email')],
+            "email" => ['required' , 'email'] , //Rule::exists('users' , 'email')],
             'password' => ['bail' , 'required' , 'min:6' ]
         ];
     }

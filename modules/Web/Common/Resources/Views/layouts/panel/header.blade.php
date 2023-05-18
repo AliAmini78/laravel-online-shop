@@ -17,7 +17,10 @@
 
                 <div class="d-flex">
                     <a href="{{route('home')}}" class="btn btn-success ms-2" type="submit">خانه</a>
-                    <a href="{{route('logout')}}"  class="btn btn-danger " type="submit">خروج</a>
+                    <form method="POST"  action="{{route('logout')}}">
+                        @csrf
+                        <button type="submit" class="btn btn-danger">خروج</button>
+                    </form>
                 </div>
         </div>
     </div>

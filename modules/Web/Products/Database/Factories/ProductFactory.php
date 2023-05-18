@@ -21,7 +21,7 @@ class ProductFactory extends Factory
     {
 
         return [
-            'title' => fake()->title(),
+            'title' => fake()->jobTitle(),
             'price' => fake()->numberBetween(100 , 1000),
             'count' => fake()->numberBetween(0 ,12),
         ];

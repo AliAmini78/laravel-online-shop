@@ -2,12 +2,15 @@
 
 namespace Web\Products\Tests\Feature;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 use Web\Products\Models\Product;
 use Web\User\Models\User;
 
 class ProductTest extends TestCase
 {
+    use RefreshDatabase;
+
     /**
      * testing store new product
      */
@@ -32,8 +35,6 @@ class ProductTest extends TestCase
         ]);
 
         $response->assertRedirect(route('product.index'));
-
-        $adminUser->delete();
 
     }
 
