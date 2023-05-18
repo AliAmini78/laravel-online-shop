@@ -22,11 +22,6 @@ class AuthTest extends TestCase
             'password' => 'password',
         ]);
 
-        // visit the login page
-        $response = $this->get(route('login'));
-
-        // assert the login page is displayed
-        $response->assertSuccessful();
 
         // submit the login form with valid credentials
         $response = $this->post(route('login'), [

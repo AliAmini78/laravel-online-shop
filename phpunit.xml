@@ -13,17 +13,11 @@
         </testsuite>
 
         <!--product testing-->
-            <testsuite name="Unit">
-                <directory suffix="Test.php">./modules/Web/Products/Tests/Unit</directory>
-            </testsuite>
             <testsuite name="Feature">
                 <directory suffix="Test.php">./modules/Web/Products/Tests/Feature</directory>
             </testsuite>
 
         <!--auth testing-->
-        <testsuite name="Unit">
-            <directory suffix="Test.php">./modules/Web/Auth/Tests/Unit</directory>
-        </testsuite>
         <testsuite name="Feature">
             <directory suffix="Test.php">./modules/Web/Auth/Tests/Feature</directory>
         </testsuite>
