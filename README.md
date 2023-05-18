@@ -53,7 +53,19 @@ You can now access the server at http://localhost:8000
 
 ----------
 
+Run the laravel test
+
+    php artisan test
+
+---------
+Run the laravel queue job
+
+    php artisan queue:work
+
+    
 ## the admin user info for login is
 
    email = admin@gmail.com <br/>
    password = 123456 
+
+---------
